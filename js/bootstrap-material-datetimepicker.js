@@ -2,8 +2,18 @@
 {
     var pluginName = "bootstrapMaterialDatePicker";
     var pluginDataName = "plugin_" + pluginName;
+    var mdiClose = "M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z";
+    var mdiChevronLeft = "M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z";
+    var mdiChevronRight = "M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z";
+
 
     moment.locale("en");
+
+    function icon(path) {
+      return "<svg xmlns='http://www.w3.org/2000/svg' class='datetime-icon'>" +
+                "<path d='" + path + "'></path>" +
+              "</svg>";
+    }
 
     function Plugin(element, options)
     {
@@ -217,27 +227,27 @@
                     "<div class=\"dtp-date-view\">" +
                     "<header class=\"dtp-header\">" +
                     "<div class=\"dtp-actual-day\">Lundi</div>" +
-                    "<div class=\"dtp-close\"><a href=\"javascript:void(0);\"><i class=\"material-icons\">clear</i></a></div>" +
+                    "<div class=\"dtp-close\"><a href=\"javascript:void(0);\">" + icon(mdiClose) + "</a></div>" +
                     "</header>" +
                     "<div class=\"dtp-date hidden\">" +
                     "<div>" +
                     "<div class=\"left center p10\">" +
-                    "<a href=\"javascript:void(0);\" class=\"dtp-select-month-before\"><i class=\"material-icons\">chevron_left</i></a>" +
+                    "<a href=\"javascript:void(0);\" class=\"dtp-select-month-before\">" + icon(mdiChevronLeft) + "</a>" +
                     "</div>" +
                     "<div class=\"dtp-actual-month p80\">MAR</div>" +
                     "<div class=\"right center p10\">" +
-                    "<a href=\"javascript:void(0);\" class=\"dtp-select-month-after\"><i class=\"material-icons\">chevron_right</i></a>" +
+                    "<a href=\"javascript:void(0);\" class=\"dtp-select-month-after\">" + icon(mdiChevronRight) + "</a>" +
                     "</div>" +
                     "<div class=\"clearfix\"></div>" +
                     "</div>" +
                     "<div class=\"dtp-actual-num\">13</div>" +
                     "<div>" +
                     "<div class=\"left center p10\">" +
-                    "<a href=\"javascript:void(0);\" class=\"dtp-select-year-before\"><i class=\"material-icons\">chevron_left</i></a>" +
+                    "<a href=\"javascript:void(0);\" class=\"dtp-select-year-before\">" + icon(mdiChevronLeft) + "</a>" +
                     "</div>" +
                     "<div class=\"dtp-actual-year p80"+(this.params.year?"":" disabled")+"\">2014</div>" +
                     "<div class=\"right center p10\">" +
-                    "<a href=\"javascript:void(0);\" class=\"dtp-select-year-after\"><i class=\"material-icons\">chevron_right</i></a>" +
+                    "<a href=\"javascript:void(0);\" class=\"dtp-select-year-after\">" + icon(mdiChevronRight) + "</a>" +
                     "</div>" +
                     "<div class=\"clearfix\"></div>" +
                     "</div>" +

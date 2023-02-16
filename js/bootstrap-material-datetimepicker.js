@@ -39,7 +39,7 @@
         this.init();
     }
 
-    $.fn[pluginName] = function (options, p)
+    window.$.fn[pluginName] = function (options, p)
     {
         this.each(function ()
         {
